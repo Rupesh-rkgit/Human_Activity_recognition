@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Chatbot</title>
+    <style>
+        /* Add some style to the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        button {
+            width: 200px;
+            padding: 10px;
+            border: none;
+            background-color: #00a0d2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Chatbot</h1>
+        <p>Please upload a video file (.mp4) that you want to ask questions about. The chatbot will analyze the video and answer your questions.</p>
+        <!-- Create a form to upload a video file using POST method and multipart/form-data encoding -->
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".mp4">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

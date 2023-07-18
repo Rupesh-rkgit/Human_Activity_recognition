@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>Chatbot</title>
+    <style>
+        /* Add some style to the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: rgb(110, 146, 115);
+        }
+
+        #video {
+            width: 100%;
+            height: auto;
+        }
+
+        #chat {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        #form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #message {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #submit {
+            width: 100px;
+            padding: 10px;
+            border: none;
+            background-color: #00a0d2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Chatbot</h1>
+        <!-- Display the uploaded video using the video argument -->
+        <!-- Use the static endpoint instead of the videos endpoint -->
+        <video id="video" src="{{ url_for('static', filename='temp.mp4') }}" controls></video>
+        <!-- Display the chat messages using AJAX -->
+        <div id="chat"></div>
+        <!-- Create a form to send user messages using POST method -->
+        <form id="form" method="POST">
+            <input id="message" type="text" name="message" placeholder="Type your message here...">
+            <button id="submit" type="submit">Send</button>
+        </form>
+    </div>
+    <!-- Add some JavaScript code to handle the form submission and update the chat messages -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Define a function to scroll the chat div to the bottom
+        function scrollChat() {
+            var chat = document.getElementById("chat");
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        // Define a function to send an AJAX request to the chat route and update the chat div with the response
+        function sendChat(message) {
+            $.ajax({
+                url: "/chat",
+                type: "POST",
+                data: {message: message},
+                success: function(response) {
+                    // Append the response to the chat div
+                    $("#chat").append(response);
+                    // Scroll the chat div to the bottom
+                    scrollChat();
+                }
+            });
+        }
+
+        // Add an event listener to the form submission
+        $("#form").submit(function(event) {
+            // Prevent the default action of reloading the page
+            event.preventDefault();
+            // Get the user message from the input field
+            var message = $("#message").val();
+            // Check if the message is not empty
+            if (message) {
+                // Append the message to the chat div as an HTML element
+                $("#chat").append("<p>User: " + message + "</p>");
+                // Scroll the chat div to the bottom
+                scrollChat();
+                // Clear the input field
+                $("#message").val("");
+                // Send the message to the chatbot using the sendChat function
+                sendChat(message);
+            }
+        });
+    </script>
+</body>
+</html>
