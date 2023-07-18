@@ -113,7 +113,7 @@ At first tried using IBM wattson assisstant chatbot to give answer using retriva
 ![Welcome screen](output/Screenshot_1.png)
 
 ### **Chat Screen**
-![chat screen](output\Screenshot_5.png)
+![chat screen](output/Screenshot_5.png)
 
 ### **Chatbot Screen**
-![chatbot screen](output\Screenshot_4.png)
+![chatbot screen](output/Screenshot_4.png)
