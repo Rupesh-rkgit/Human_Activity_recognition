@@ -88,32 +88,32 @@ Summary
 ```
 
 ### **Sample Images of Actions**
-![Sample Images of Actions](output\sample_images.png)
+![Sample Images of Actions](output/sample_images.png)
 
 ### **Training and Validation Accuracy & Loss**
-![Training and Validation Accuracy & Loss](output\Training_and_validation.png)
+![Training and Validation Accuracy & Loss](output/Training_and_validation.png)
 
 ### **Test Prediction**
-![Test Prediction](output\test_pred.png)
+![Test Prediction](output/test_pred.png)
 
 # Chatbot
 
 ```
-We tried to create chatbot for video context, but it didn't worked well in the time frame.
+We tried to create a chatbot for video context, but it didn't worked well in the time frame.
 At first tried using IBM wattson assisstant chatbot to give answer using retrival documents but due to api key and cloud accound problems it don't worked out. Then due to time limitations just created a basic program which can answer about video from dictionary created.
 
 ```
 ### **Flask app run**
-![Flask app run](output\Screenshot_3.png)
+![Flask app run](output/Screenshot_3.png)
 
 ### **Upload screen**
-![Upload screen](output\Screenshot_2.png)
+![Upload screen](output/Screenshot_2.png)
 
 ### **Welcome screen**
-![Welcome screen](output\Screenshot_1.png)
+![Welcome screen](output/Screenshot_1.png)
 
 ### **Chat Screen**
-![chat screen](output\Screenshot_5.png)
+![chat screen](output/Screenshot_5.png)
 
 ### **Chatbot Screen**
-![chatbot screen](output\Screenshot_4.png)
+![chatbot screen](output/Screenshot_4.png)
